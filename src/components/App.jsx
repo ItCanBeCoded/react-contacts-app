@@ -3,13 +3,25 @@ import Card from "./Card";
 import contacts from "../contacts";
 import Avatar from "./Avatar";
 
+function createCard(contact) {
+  return (
+    <Card
+      name={contact.name}
+      img={contact.imgURL}
+      tel={contact.phone}
+      email={contact.email}
+    />
+  );
+}
+
 function App() {
   return (
     <div>
       <h1 className="heading">My Contacts</h1>
       <Avatar img="https://dl0.creation.com/articles/p139/c13995/God-before-creation.jpg" />
+      {contacts.map(createCard)}
 
-      <Card
+      {/* <Card
         name={contacts[0].name}
         img={contacts[0].imgURL}
         tel={contacts[0].phone}
@@ -26,7 +38,7 @@ function App() {
         img={contacts[2].imgURL}
         tel={contacts[2].phone}
         email={contacts[2].email}
-      />
+      /> */}
     </div>
   );
 }
